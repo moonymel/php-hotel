@@ -54,6 +54,7 @@ $hotels = [
 </head>
 
 <body>
+    <?php include __DIR__.'/partials/templates/header.php' ?>
 
     <div class="container my-4">
         <table class="table">
@@ -80,7 +81,7 @@ $hotels = [
         </table>
     </div>
 
-
+    <?php include __DIR__.'/partials/templates/footer.php' ?>
 </body>
 
 </html>

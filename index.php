@@ -49,20 +49,37 @@ $hotels = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    
-    <?php
-    foreach($hotels as $hotel){
-        echo '<h2>'.$hotel['name'].'</h2><br>';
-        echo $hotel['description'].'<br>';
-        echo $hotel['parking'].'<br>';
-        echo $hotel['vote'].'<br>';
-        echo $hotel['distance_to_center'].'<br>';
-    }
-    ?>
+
+    <div class="container my-4">
+        <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Parking</th>
+            <th scope="col">Vote</th>
+            <th scope="col">Distance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($hotels as $hotel){ ?>
+                <tr> <?php
+                    echo '<td>'.$hotel['name'].'</td>';
+                    echo '<td>'.$hotel['description'].'</td>';
+                    echo ($hotel['parking']) ? '<td>yes</td>' : '<td>no</td>';
+                    echo '<td>'.$hotel['vote'].'</td>';
+                    echo '<td>'.$hotel['distance_to_center'].'</td>';
+                } ?>
+                </tr>
+        </tbody>
+        </table>
+    </div>
+
 
 </body>
 
